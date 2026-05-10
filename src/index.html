@@ -40,9 +40,10 @@
       sizes="16x16"
       href="./images/favicon/favicon-16x16.png"
     />
+    <script src="./scripts/main.js" defer></script>
   </head>
   <body class="page_body">
-    <header class="header">
+    <header id="top" class="header">
       <div class="container">
         <div class="header__content">
           <div class="top-bar">
@@ -62,7 +63,11 @@
                 <a href="tel:+12345555555" class="icon__link"></a>
               </div>
 
-              <a href="#menu" class="icon icon--menu"></a>
+              <a
+                href="#menu"
+                class="icon icon--menu"
+                aria-label="Open menu"
+              ></a>
             </div>
           </div>
           <div class="header__bottom">
@@ -83,11 +88,15 @@
             <a href="#top" class="top-bar__logo-link">
               <img
                 src="./images/logo.png"
-                alt="Bose logo"
+                alt="Nothing logo"
                 class="top-bar__logo"
               />
             </a>
-            <a href="#" class="icon icon--close menu__top-close"></a>
+            <a
+              href="#"
+              class="icon icon--close menu__top-close"
+              aria-label="Close menu"
+            ></a>
           </div>
         </div>
         <div class="menu__bottom">
@@ -125,11 +134,31 @@
             <div class="recommended__products">
               <article class="product recommended__product">
                 <a href="#" class="product__link">
-                  <img
-                    src="./images/product/Phone (1).png"
-                    alt="Phone"
-                    class="product__photo"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/product/phone-1-desktop.webp    1x,
+                        ./images/product/phone-1-desktop-@2.webp 2x
+                      "
+                      media="(min-width: 1260px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/product/phone-1-tablet.webp    1x,
+                        ./images/product/phone-1-tablet-@2.webp 2x
+                      "
+                      media="(min-width: 744px)"
+                      type="image/webp"
+                    />
+                    <img
+                      loading="lazy"
+                      class="product__photo"
+                      src="./images/product/phone-1-mobile.webp"
+                      srcset="./images/product/phone-1-mobile.webp 2x"
+                      alt="Smartphone Phone 1"
+                    />
+                  </picture>
                 </a>
                 <h3 class="product__title">Phone (1)</h3>
                 <p class="product__category">
@@ -141,11 +170,31 @@
               </article>
               <article class="product recommended__product">
                 <a href="#" class="product__link">
-                  <img
-                    src="./images/product/Ear (2).png"
-                    alt="Phone"
-                    class="product__photo"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/product/ear-2-desktop.webp    1x,
+                        ./images/product/ear-2-desktop-@2.webp 2x
+                      "
+                      media="(min-width: 1260px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/product/ear-2-tablet.webp    1x,
+                        ./images/product/ear-2-tablet-@2.webp 2x
+                      "
+                      media="(min-width: 744px)"
+                      type="image/webp"
+                    />
+                    <img
+                      loading="lazy"
+                      class="product__photo"
+                      src="./images/product/ear-2-mobile.webp"
+                      srcset="./images/product/ear-2-mobile.webp 2x"
+                      alt="Earbuds Ear 2"
+                    />
+                  </picture>
                 </a>
                 <h3 class="product__title">Ear (2)</h3>
                 <p class="product__category">
@@ -156,11 +205,31 @@
               </article>
               <article class="product recommended__product">
                 <a href="#" class="product__link">
-                  <img
-                    src="./images/product/Ear (stick).png"
-                    alt="Phone"
-                    class="product__photo"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/product/ear-stick-desktop.webp    1x,
+                        ./images/product/ear-stick-desktop-@2.webp 2x
+                      "
+                      media="(min-width: 1260px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/product/ear-stick-tablet.webp    1x,
+                        ./images/product/ear-stick-tablet-@2.webp 2x
+                      "
+                      media="(min-width: 744px)"
+                      type="image/webp"
+                    />
+                    <img
+                      loading="lazy"
+                      src="./images/product/ear-stick-mobile.webp"
+                      srcset="./images/product/ear-stick-mobile.webp 2x"
+                      alt="Earbuds Ear Stick"
+                      class="product__photo"
+                    />
+                  </picture>
                 </a>
                 <h3 class="product__title">Ear (stick)</h3>
                 <p class="product__category">
@@ -178,19 +247,64 @@
               <article class="category">
                 <div class="category__photos">
                   <a href="#" class="category__link category__link--wide">
-                    <img
-                      class="category__photo"
-                      src="./images/categories/all products-wide.png"
-                      alt="All products"
-                    />
+                    <picture>
+                      <source
+                        srcset="
+                          ./images/categories/all-products-wide-desktop.webp    1x,
+                          ./images/categories/all-products-wide-desktop-@2.webp 2x
+                        "
+                        media="(min-width: 1260px)"
+                        type="image/webp"
+                      />
+                      <source
+                        srcset="
+                          ./images/categories/all-products-wide-tablet.webp    1x,
+                          ./images/categories/all-products-wide-tablet-@2.webp 2x
+                        "
+                        media="(min-width: 744px)"
+                        type="image/webp"
+                      />
+                      <img
+                        loading="lazy"
+                        class="category__photo"
+                        src="./images/categories/all-products-wide-mobile.webp"
+                        srcset="
+                          ./images/categories/all-products-wide-mobile.webp 2x
+                        "
+                        alt="All products"
+                      />
+                    </picture>
                   </a>
 
                   <a href="#" class="category__link category__link--square">
-                    <img
-                      class="category__photo"
-                      src="./images/categories/all products-square.png"
-                      alt="All products"
-                    />
+                    <picture>
+                      <source
+                        srcset="
+                          ./images/categories/all-products-square-desktop.webp    1x,
+                          ./images/categories/all-products-square-desktop-@2.webp 2x
+                        "
+                        media="(min-width: 1260px)"
+                        type="image/webp"
+                      />
+                      <source
+                        srcset="
+                          ./images/categories/all-products-square-tablet.webp    1x,
+                          ./images/categories/all-products-square-tablet-@2.webp 2x
+                        "
+                        media="(min-width: 744px)"
+                        type="image/webp"
+                      />
+
+                      <img
+                        loading="lazy"
+                        class="category__photo"
+                        src="./images/categories/all-products-square-mobile.webp"
+                        srcset="
+                          ./images/categories/all-products-square-mobile-@2.webp
+                        "
+                        alt="All products"
+                      />
+                    </picture>
                   </a>
                 </div>
 
@@ -199,19 +313,64 @@
               <article class="category">
                 <div class="category__photos">
                   <a href="#" class="category__link category__link--square">
-                    <img
-                      class="category__photo"
-                      src="./images/categories/audio-square.png"
-                      alt="Audio"
-                    />
+                    <picture>
+                      <source
+                        srcset="
+                          ./images/categories/audio-square-desktop.webp    1x,
+                          ./images/categories/audio-square-desktop-@2.webp 2x
+                        "
+                        media="(min-width: 1260px)"
+                        type="image/webp"
+                      />
+                      <source
+                        srcset="
+                          ./images/categories/audio-square-tablet.webp    1x,
+                          ./images/categories/audio-square-tablet-@2.webp 2x
+                        "
+                        media="(min-width: 744px)"
+                        type="image/webp"
+                      />
+
+                      <img
+                        loading="lazy"
+                        class="category__photo"
+                        src="./images/categories/audio-square-mobile.webp"
+                        srcset="
+                          ./images/categories/audio-square-mobile-@2.webp 2x
+                        "
+                        alt="Audio"
+                      />
+                    </picture>
                   </a>
 
                   <a href="#" class="category__link category__link--wide">
-                    <img
-                      class="category__photo"
-                      src="./images/categories/audio-wide.png"
-                      alt="Audio"
-                    />
+                    <picture>
+                      <source
+                        srcset="
+                          images/categories/audio-wide-desktop.webp      1x,
+                          ./images/categories/audio-wide-desktop-@2.webp 2x
+                        "
+                        media="(min-width: 1260px)"
+                        type="image/webp"
+                      />
+                      <source
+                        srcset="
+                          images/categories/audio-wide-tablet.webp      1x,
+                          ./images/categories/audio-wide-tablet-@2.webp 2x
+                        "
+                        media="(min-width: 744px)"
+                        type="image/webp"
+                      />
+                      <img
+                        loading="lazy"
+                        class="category__photo"
+                        src="./images/categories/audio-wide-mobile.webp"
+                        srcset="
+                          ./images/categories/audio-wide-mobile-@2.webp 2x
+                        "
+                        alt="Audio"
+                      />
+                    </picture>
                   </a>
                 </div>
 
@@ -220,19 +379,63 @@
               <article class="category">
                 <div class="category__photos">
                   <a href="#" class="category__link category__link--wide">
-                    <img
-                      class="category__photo"
-                      src="./images/categories/accessories-wide.png"
-                      alt="Accessories"
-                    />
+                    <picture>
+                      <source
+                        srcset="
+                          ./images/categories/accessories-wide-desktop.webp    1x,
+                          ./images/categories/accessories-wide-desktop-@2.webp 2x
+                        "
+                        media="(min-width: 1260px)"
+                        type="image/webp"
+                      />
+                      <source
+                        srcset="
+                          ./images/categories/accessories-wide-tablet.webp    1x,
+                          ./images/categories/accessories-wide-tablet-@2.webp 2x
+                        "
+                        media="(min-width: 744px)"
+                        type="image/webp"
+                      />
+                      <img
+                        loading="lazy"
+                        class="category__photo"
+                        src="./images/categories/accessories-wide-mobile.webp"
+                        srcset="
+                          ./images/categories/accessories-wide-mobile-@2.webp 2x
+                        "
+                        alt="Accessories"
+                      />
+                    </picture>
                   </a>
 
                   <a href="#" class="category__link category__link--square">
-                    <img
-                      class="category__photo"
-                      src="./images/categories/accessories-square.png"
-                      alt="Accessories"
-                    />
+                    <picture>
+                      <source
+                        srcset="
+                          ./images/categories/accessories-square-desktop.webp    1x,
+                          ./images/categories/accessories-square-desktop-@2.webp 2x
+                        "
+                        media="(min-width: 1260px)"
+                        type="image/webp"
+                      />
+                      <source
+                        srcset="
+                          ./images/categories/accessories-square-tablet.webp    1x,
+                          ./images/categories/accessories-square-tablet-@2.webp 2x
+                        "
+                        media="(min-width: 744px)"
+                        type="image/webp"
+                      />
+                      <img
+                        loading="lazy"
+                        class="category__photo"
+                        src="./images/categories/accessories-square-mobile.webp"
+                        srcset="
+                          ./images/categories/accessories-square-mobile-@2.webp 2x
+                        "
+                        alt="Accessories"
+                      />
+                    </picture>
                   </a>
                 </div>
                 <h3 class="category__title">Accessories</h3>
@@ -242,11 +445,31 @@
           </section>
 
           <section class="pre-about-us">
-            <img
-              src="./images/before-about-us-bg-desktop.png"
-              alt="Pre about us bg"
-              class="pre-about-us__bg"
-            />
+            <picture class="pre-about-us__image-wrapper">
+              <source
+                srcset="
+                  ./images/before-about-us-bg-desktop.webp    1x,
+                  ./images/before-about-us-bg-desktop-@2.webp 2x
+                "
+                media="(min-width: 1260px)"
+                type="image/webp"
+              />
+              <source
+                srcset="
+                  ./images/before-about-us-bg-tablet.webp    1x,
+                  ./images/before-about-us-bg-tablet-@2.webp 2x
+                "
+                media="(min-width: 744px)"
+                type="image/webp"
+              />
+              <img
+                loading="lazy"
+                src="./images/before-about-us-bg-mobile.webp"
+                srcset="./images/before-about-us-bg-mobile-@2.webp 2x"
+                alt="Background for Before About us section"
+                class="pre-about-us__bg-img"
+              />
+            </picture>
           </section>
 
           <section class="about-us" id="about-us">
@@ -278,10 +501,13 @@
 
             <div class="contacts__field">
               <form
+                id="form"
+                action="#"
+                method="POST"
                 class="contacts__form"
-                onsubmit="this.reset(); return false;"
               >
                 <input
+                  aria-label="Your name"
                   type="text"
                   name="name"
                   placeholder="Name"
@@ -291,6 +517,7 @@
                   required
                 />
                 <input
+                  aria-label="Your email"
                   type="email"
                   name="email"
                   placeholder="Email"
@@ -301,6 +528,7 @@
                   required
                 />
                 <textarea
+                  aria-label="Your message"
                   name="message"
                   placeholder="Message"
                   class="contacts__textarea"
