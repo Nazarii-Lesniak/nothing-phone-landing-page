@@ -1,15 +1,25 @@
 .header {
-  background-image: url(../images/header-bg-mobile.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center top;
+  background-position: center;
+
+  background-image: image-set(
+    url(../images/header-bg-mobile.webp) 1x,
+    url(../images/header-bg-mobile-@2.webp) 2x
+  );
 
   @include on-tablet {
-    background-image: url(../images/header-bg-tablet.png);
+    background-image: image-set(
+      url(../images/header-bg-tablet.webp) 1x,
+      url(../images/header-bg-tablet-@2.webp) 2x
+    );
   }
 
   @include on-desktop {
-    background-image: url(../images/header-bg-desktop.png);
+    background-image: image-set(
+      url(../images/header-bg-desktop.webp) 1x,
+      url(../images/header-bg-desktop-@2.webp) 2x
+    );
   }
 
   &__content {
