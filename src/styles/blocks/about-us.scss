@@ -1,5 +1,6 @@
 .about-us {
   @include page-grid;
+
   &__title {
     grid-column: 1 / -1;
 
@@ -13,9 +14,9 @@
   }
 
   &__content {
-    font-family: "Space Mono", monospace;
-
     grid-column: 1 / -1;
+
+    font-family: $font-mono;
 
     @include on-tablet {
       grid-column: 4 / 7;
@@ -27,9 +28,9 @@
   }
 
   &__description {
-    row-gap: 16px;
     margin: 0;
     margin-bottom: 40px;
     padding: 0;
+    row-gap: 16px;
   }
 }

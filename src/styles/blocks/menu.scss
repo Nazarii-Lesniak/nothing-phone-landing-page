@@ -1,17 +1,20 @@
 .menu {
   box-sizing: border-box;
   height: 100vh;
-  background-color: #E5E6E8;
-  font-weight: 700;
-  overflow: auto;
+
+  @include text-nav-link;
+
+
+  background-color: $bg-menu;
+  overflow: hidden;
 
   &__top {
-    background-color: #E5E6E8;
     position: sticky;
     top: 0;
     z-index: 1;
 
     margin-bottom: 32px;
+    background-color: $bg-menu;
 
     @include on-tablet {
       margin-bottom: 0;
@@ -23,26 +26,33 @@
   }
 
   &__phone-number {
+    @include text-body;
+
     display: block;
     margin-bottom: 16px;
-    color: inherit;
+
     text-decoration: none;
-    font-size: 16px;
-    line-height: 140%;
+    color: inherit;
+
+    transition: opacity $effect-time;
 
     @include hover(opacity, 0.7);
   }
 
   &__call-to-order {
+    @include text-body;
+
+
     display: block;
     width: fit-content;
     padding-bottom: 4px;
     border-bottom: 1px solid $main-text-color;
-    color: inherit;
+
     text-decoration: none;
-    font-size: 16px;
-    line-height: 140%;
     letter-spacing: 2px;
+    color: inherit;
+
+    transition: opacity $effect-time;
 
     @include hover(opacity, 0.7);
   }

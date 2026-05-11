@@ -1,13 +1,13 @@
 .main {
-  background-color: #fff;
+  background-color: $color-white;
 
   &__content {
     display: grid;
     row-gap: 96px;
-    padding-block: 96px;
+    padding-block: $section-padding-mobile;
 
     @include on-tablet {
-      padding-block: 120px;
+      padding-block: $section-padding-tablet;
       row-gap: 120px;
     }
   }

@@ -18,7 +18,7 @@
   }
 
   @include on-desktop {
-    max-width: 1020px;
+    max-width: $container-max-width;
     margin-inline: auto;
     padding-inline: 120px;
   }
@@ -28,7 +28,7 @@
   transition: #{$property} $effect-time;
 
   &:hover {
-    #{$property}: $toValue
+    #{$property}: $toValue;
   }
 }
 
@@ -36,13 +36,13 @@
   --columns: 2;
 
   display: grid;
-  gap: 20px;
+  gap: $grid-gap-mobile;
   grid-template-columns: repeat(var(--columns), 1fr);
 
   @include on-tablet {
     --columns: 6;
 
-    column-gap: 24px;
+    column-gap: $grid-gap-tablet;
   }
 
   @include on-desktop {
@@ -53,40 +53,137 @@
 @mixin form-input {
   box-sizing: border-box;
   padding: 16px;
-  background-color: #F8F8FA;
-  border-radius: 8px;
+  background-color: $bg-light;
+  border-radius: $border-radius;
   border: 1px solid transparent;
 
-  transition: transform
-    $effect-time,
+  transition:
+    transform $effect-time,
     border-color $effect-time,
-    background-color
-    $effect-time;
-
+    background-color $effect-time;
 
   &:hover {
     transform: scale(0.97);
-    border-color: #D5D7DE;
+    border-color: $border-hover;
   }
 
   &:focus {
     outline: none;
-    border-color: #292929;
+    border-color: $main-border-color;
   }
 
   &:active {
-    border-color: #292929;
+    border-color: $main-border-color;
     transform: scale(0.95);
   }
 
   &::placeholder {
-    font-family: "Space Mono", monospace;
-    color: #7E7E83;
+    font-family: $font-mono;
+    color: $text-placeholder;
   }
 
   &:hover::placeholder {
     transform: scale(0.99);
-    border-color: #D5D7DE;
+    border-color: $border-hover;
     color: $main-text-color;
   }
+}
+
+@mixin text-body {
+  font-size: 16px;
+  line-height: 140%;
+}
+
+@mixin text-h1 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 100%;
+
+  @include on-tablet {
+    font-size: 48px;
+  }
+
+  @include on-desktop {
+    font-size: 56px;
+  }
+}
+
+@mixin text-h2 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 32px;
+
+  @include on-tablet {
+    font-size: 40px;
+  }
+
+  @include on-desktop {
+    font-size: 48px;
+  }
+}
+
+@mixin text-h3 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 140%;
+}
+
+@mixin text-nav-link {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 22px;
+  letter-spacing: 2px;
+}
+
+@mixin text-small {
+  font-size: 14px;
+  line-height: 140%;
+}
+
+@mixin button-base() {
+  @include text-body;
+  @include hover(transform, scale(0.97));
+
+  height: $button-height;
+  background-color: $main-text-color;
+  border-radius: $border-radius;
+  cursor: pointer;
+
+  color: $color-white;
+  font-weight: 700;
+  border: 2px solid transparent;
+
+  transition:
+    color $effect-time,
+    background-color $effect-time,
+    border-color $effect-time,
+    transform $effect-time;
+
+  &:hover {
+    color: $main-text-color;
+    background-color: $bg-light;
+    border-color: $border-light;
+  }
+
+  &:active {
+    color: $color-white;
+    background-color: $color-black-active;
+
+    @include hover(transform, scale(0.95));
+  }
+}
+
+@mixin absolute-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin bg-retina($file-name, $extension: 'webp') {
+  background-image: image-set(
+    url(../images/#{$file-name}.#{$extension}) 1x,
+    url(../images/#{$file-name}-@2.#{$extension}) 2x
+  );
 }
