@@ -9,9 +9,8 @@
 
   &__form {
     display: grid;
-    gap: 16px;
-
     grid-column: 1 / -1;
+    gap: 16px;
 
     @include on-tablet {
       grid-column: 1 / -1;
@@ -42,59 +41,33 @@
 
   &__input--name,
   &__input--email {
-    height: 48px;
+    height: $input-height;
   }
 
   &__textarea {
+    height: $textarea-height;
     resize: none;
-    height: 148px;
   }
 
   &__button {
-    cursor: pointer;
-    height: 56px;
-    background-color: #292929;
-    border-radius: 8px;
-
-    color: #fff;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 27px;
-
-    @include hover(transform, scale(0.97));
-
-    &:hover {
-      transition: all $effect-time;
-      color: #292929;
-      background-color: #F8F8FA;
-      border: 2px solid #F0F1F4;
-    }
-
-    &:active {
-      color: #fff;
-      background-color: #111;
-
-      @include hover(transform, scale(0.95));
-    }
+    @include button-base;
   }
 
   &__type-of-info {
-    font-size: 14px;
-    line-height: 140%;
-    color: #9393A3;
+    @include text-small;
+
+    color: $text-muted;
   }
 
   &__text-info {
-    font-family: "Space Mono", monospace;
+    font-family: $font-mono;
     text-decoration: none;
-    line-height: 140%;
-    color: #191919;
+    color: $text-info;
 
-    @include hover(transform, scale(0.95));
+    transition: color $effect-time;
 
     &:hover {
-      transition: all $effect-time;
-      color: #9393A3;
+      color: $text-muted;
     }
   }
 }

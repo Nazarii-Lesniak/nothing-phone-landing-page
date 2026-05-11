@@ -1,50 +1,31 @@
 .header {
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-attachment: fixed;
   background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
-  background-image: image-set(
-    url(../images/header-bg-mobile.webp) 1x,
-    url(../images/header-bg-mobile-@2.webp) 2x
-  );
+  @include bg-retina('header-bg-mobile');
 
   @include on-tablet {
-    background-image: image-set(
-      url(../images/header-bg-tablet.webp) 1x,
-      url(../images/header-bg-tablet-@2.webp) 2x
-    );
+    @include bg-retina('header-bg-tablet');
   }
 
   @include on-desktop {
-    background-image: image-set(
-      url(../images/header-bg-desktop.webp) 1x,
-      url(../images/header-bg-desktop-@2.webp) 2x
-    );
+    @include bg-retina('header-bg-desktop');
   }
 
   &__content {
-    height: 100vh;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100vh;
   }
 
   &__title {
+    @include text-h1;
+
     margin: 0;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 100%;
     color: $main-text-color;
-
-    @include on-tablet {
-      font-size: 48px;
-    }
-
-    @include on-desktop {
-      font-size: 56px;
-    }
   }
 
   &__bottom {

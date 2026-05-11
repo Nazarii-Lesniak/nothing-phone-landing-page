@@ -2,16 +2,14 @@
   &__products {
     @include page-grid;
 
-    gap: 40px 20px;
+    gap: $section-gap-mobile $grid-gap-mobile;
 
     @include on-tablet {
-      column-gap: 24px;
+      column-gap: $grid-gap-tablet;
     }
   }
 
   &__product {
-    @include hover(transform, scale(1.05));
-
     grid-column: 1 / -1;
 
     @include on-tablet {
@@ -21,5 +19,7 @@
     @include on-desktop {
       grid-column: span 4;
     }
+
+    transition: transform $effect-time;
   }
 }

@@ -1,61 +1,71 @@
 .icon {
+  position: relative;
   display: block;
-  width: 24px;
-  height: 24px;
+
+  width: $icon-size-base;
+  height: $icon-size-base;
+
   background-size: cover;
   cursor: pointer;
-  position: relative;
+
+  @include on-tablet {
+    width: $icon-size-tablet;
+    height: $icon-size-tablet;
+  }
+
+  transition: transform $effect-time;
 
   @include hover(transform, scale(1.2));
 
-  @include on-tablet {
-    height: 32px;
-    width: 32px;
+  &:active {
+    @include hover(transform, scale(0.95));
   }
 
   &--phone {
-    background-image: url("../images/icons/icon-phone-call.svg");
+    background-image: url('../images/icons/icon-phone-call.svg');
 
     @include on-desktop {
       &:hover {
         .icon__phone-number {
           display: block;
           opacity: 1;
-          left: -150px;
         }
       }
     }
   }
 
   &__phone-number {
-    font-family: Inter, sans-serif;
-    display: inline-block;
     position: absolute;
-    opacity: 0;
-    color: $main-text-color;
-    white-space: nowrap;
-    text-decoration: none;
-    z-index: 5;
-    padding: 8px;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 16px;
-    letter-spacing: 1px;
-    transition: all $effect-time;
     top: 50%;
     left: -150px;
+    z-index: 5;
+
+    display: inline-block;
+
+    padding: 8px;
+
+    font-weight: 700;
+    font-size: 12px;
+    font-family: $font-secondary;
+    letter-spacing: 1px;
+    text-decoration: none;
+    white-space: nowrap;
+    color: $main-text-color;
+
+    opacity: 0;
     transform: translateY(-50%);
+    transition: opacity $effect-time;
   }
 
   &--menu {
-    background-image: url("../images/icons/icon-burger-menu.svg");
+    background-image: url('../images/icons/icon-burger-menu.svg');
 
     &:hover {
-      background-image: url("../images/icons/icon-burger-menu-hover.svg");
+      background-image: url('../images/icons/icon-burger-menu-hover.svg');
     }
   }
 
   &--close {
-    background-image: url("../images/icons/icon-close.svg");
+    background-image: url('../images/icons/icon-close.svg');
   }
 }
