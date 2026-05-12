@@ -12,10 +12,6 @@ You can check out the live version of the landing page here: [👉 PROJECT DEMO]
 
 ## 🎨 Design & UI/UX
 
----
-
-## 🎨 Design & UI/UX
-
 The project precisely follows the minimalist and futuristic aesthetic of the Nothing brand.
 
 - **Figma Design:** [View Original Design Concept](https://www.figma.com/design/DtkQmQ797hk0nI4KfMi2Uq/BOSE-New-Version?node-id=6802-139&p=f&t=g5tu72wYoVA6AFCV-0) — The UI was inspired by this professional layout to ensure high-end visual standards.
@@ -37,7 +33,7 @@ The project precisely follows the minimalist and futuristic aesthetic of the Not
 - **HTML5:** Semantic, accessible, and well-structured markup.
 - **SCSS:** Advanced styling utilizing **variables, nesting, and custom mixins** to keep the stylesheet DRY (Don't Repeat Yourself) and highly organized.
 - **JavaScript (ES6+):** Handles interactive UI components (like the mobile burger menu and dynamic elements).
-- **Gulp / NPM Scripts:** Used for building, compiling SCSS, and optimizing assets.
+- **NPM Scripts:** Used for building, compiling SCSS, and optimizing assets.
 
 ---
 
@@ -61,4 +57,4 @@ To run this project locally, follow these steps:
    npm start
    ```
 
-## 📄 LicenseThis project is licensed under the GPL-3.0 License.
+## 📄 License This project is licensed under the GPL-3.0 License.
