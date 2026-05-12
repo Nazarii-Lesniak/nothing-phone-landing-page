@@ -1,0 +1,2 @@
+var e=document.querySelector("#form"),t=document.querySelectorAll(".fade-in");e.addEventListener("submit",function(t){t.preventDefault(),window.alert("Thank you! The form has been successfully submitted!"),e.reset()});var r=new IntersectionObserver(function(e,t){e.forEach(function(e){e.isIntersecting&&(e.target.classList.add("visible"),t.unobserve(e.target))})},{root:null,rootMargin:"0px",threshold:.15});t.forEach(function(e){r.observe(e)});
+//# sourceMappingURL=index.9d3e1154.js.map
